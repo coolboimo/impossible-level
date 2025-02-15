@@ -1,0 +1,46 @@
+.contact-mod{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5em;
+    margin-bottom: 20px;
+    border: 1px solid black;
+    gap: 10px;
+}
+
+.mod-name{
+    border-right: 1px solid black;
+    width: 350px;
+    padding: 5px;
+    background-color: rgb(3, 124, 65);
+}
+
+.mod-social-net{
+    padding: 5px 15.2px 5px 5px;
+}
+
+.mod-social-net:hover{
+    opacity: 0.85;
+}
+
+.mod-social-net:active{
+    opacity: 0.65;
+}
+
+@media (max-width: 800px) {
+    .contact-mod{
+        font-size: 1em;
+    }
+}
+
+@media(max-width: 475px){
+    .mod-name{
+        width: 175px;
+        font-size: 0.8em;
+    }
+
+    main h1{
+        font-size: 1.2em;
+    }
+}

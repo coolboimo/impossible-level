@@ -1,0 +1,266 @@
+header{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 2px;
+}
+
+header a{
+    text-decoration: none;
+    color: black;
+}
+
+.title-container h2{
+    cursor: pointer;
+}
+
+.nav-button:hover, .header-right span:hover, .account-label:hover{
+    cursor: pointer;
+    color: rgb(128, 255, 0);
+}
+
+.nav-button:active, .header-right span:active, .account-label:active{
+    color: rgb(21, 172, 5);
+}
+
+
+.title-container{
+    margin-top: -2px;
+}
+
+.header-left{
+    display: flex;
+    gap: 35px;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.nav-bar-left{
+    display: flex;
+    align-items: center;
+    gap: 16.5px;
+}
+
+.nav-button{
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.account-icon-container{
+    display: flex;
+    align-items: center;
+    gap: 5.7px;
+}
+
+#account{
+    display: flex;
+    flex-direction: row;
+}
+
+.header-right{
+    display: flex;
+    gap: 9.2px;
+    align-items: center;
+}
+
+/*Tab Bars*/
+
+.list-container, .more-container, .social-container, .language-container, .account-container{
+    position: fixed;
+    top: 62px;
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(11, 145, 75);
+    border-radius: 12px;
+    overflow: hidden;
+    visibility: hidden;
+}
+
+.list-container{
+    left: 38.1em;
+}
+
+.more-container{
+    left: 43.5em;
+}
+
+.account-label{
+    display: flex;
+    align-items: center;
+    padding: 0.2px 5px;
+}
+
+#sign-up, #log-in{
+    display: flex;
+    align-items: center;
+    padding: 5px;
+}
+
+.language-container span, #log-out{
+    padding: 5px;
+}
+
+.account-icon-container{
+    margin-top: -4.1px;
+}
+
+.header-left div a{
+    padding: 6.2px;
+}
+
+.header-left div a:hover, .header-left div a span:hover{
+    background-color: rgb(8, 168, 85);
+    cursor: pointer;
+}
+
+.header-left div a:active, .header-left div a span:active{
+    color: rgb(5, 208, 103);
+}
+
+/*Menu Bars*/
+#menuButton{
+    cursor: pointer;
+}
+
+#menuButton:hover{
+    color: rgb(9, 188, 95);
+}
+
+#menuButton:active{
+    color: rgb(16, 207, 108);
+}
+
+.menu-content{
+    position: absolute;
+    background-color: rgb(11, 145, 75);
+    top: 62px;
+    left: 0;
+    width: 100%;
+    max-height: 325px;
+    overflow-y: auto;
+    padding-bottom: 10px;
+    visibility: hidden;
+}
+
+.menu-content div{
+    display: flex;
+    flex-direction: column;
+}
+
+.menu-content h3{
+    padding-left: 3.5px;
+}
+
+.menu-content div h4, .menu-content div a, .menu-content div span{
+    padding: 3.5px;
+    cursor: pointer;
+}
+
+.menu-content div a:hover, .menu-content div span:hover{
+    background-color: rgb(8, 168, 85);
+}
+
+.menu-content div a:active, .menu-content div span:active{
+    background-color: rgb(5, 208, 103);
+}
+
+/*media*/
+@media (max-width: 1420px){
+    .list-container{
+        left: 35.2em;
+    }
+    
+    .more-container{
+        left: 40.7em;
+    }
+}
+
+@media (max-width: 1250px){
+    .list-container{
+        left: 32.8em;
+    }
+    
+    .more-container{
+        left: 38.9em;
+    }
+}
+
+@media (max-width: 1100px){
+    .list-container{
+        left: 30.5em;
+    }
+    
+    .more-container{
+        left: 35.6em;
+    }
+}
+
+@media (max-width: 1020px){
+    .list-container{
+        left: 27.5em;
+    }
+    
+    .more-container{
+        left: 32.5em;
+    }
+
+    .title-container h2{
+        font-size: 1.2em;
+    }
+
+    span{
+        font-size: 0.9em;
+    }
+}
+
+@media (max-width: 675px) {
+    .title-container h2 {
+        font-size: 1.02em;
+        white-space: inherit;
+    }
+
+    span {
+        font-size: 0.8em;
+    }
+
+    .header {
+        flex-wrap: wrap;
+        gap: clamp(2px, 1vw, 12px); /* Ensures gap scales properly */
+        justify-content: center; /* Centers content when wrapping */
+        align-items: center; /* Aligns elements properly */
+    }
+
+    .title-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center; /* Centers text */
+        flex-shrink: 1; /* Allows shrinking */
+        min-width: 100px; /* Prevents excessive shrinking */
+        max-width: 80%; /* Limits width for responsiveness */
+        text-align: center; /* Adjusts alignment */
+    }
+}
+
+@media (max-width: 500px) {
+    .title-container h2 {
+        font-size: 0.9em;
+    }
+
+    .header {
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .title-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center; /* Centers text */
+        flex-shrink: 1; /* Allows shrinking */
+        min-width: 100px; /* Prevents excessive shrinking */
+        max-width: 60%; /* Slightly increased width for better balance */
+        text-align: center; /* Ensures text stays centered */
+    }
+}

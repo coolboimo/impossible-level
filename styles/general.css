@@ -1,0 +1,17 @@
+body{
+    background: rgb(111, 175, 7);
+    background: radial-gradient(circle, rgb(3, 119, 14) 0%, rgb(49, 85, 108) 50%, rgb(68, 141, 64) 100%);
+}
+
+*{
+  font-family: "IBM Plex Mono", monospace, "Rubik", serif;
+  font-optical-sizing: auto;
+}
+
+main{
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  margin-top: 20px;
+  gap: 35px;
+}
