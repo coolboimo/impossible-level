@@ -11,7 +11,7 @@ const __dirname = dirname(__filename);
 
 // Import levels from your levels.js file
 import pkg from '../data/levels.js';
-const { levels } = pkg;
+const { levelsModule } = pkg;
 
 
 function generateHtmlTemplate(level, index) {
@@ -86,7 +86,7 @@ function createLevelPages() {
         }
 
         // Create HTML files for each 
-        levels.forEach((level, index) => {
+        levelsModule.forEach((level, index) => {
             const filePath = join(outputDir, `${index + 1}.html`);
             fs.writeFileSync(filePath, generateHtmlTemplate(level, index), 'utf8');
             console.log(`Created level page: ${index + 1}.html`);

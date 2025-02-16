@@ -1,4 +1,4 @@
-const levels = [
+const levelsData = [
 {
     name: "Formosa",
     fps: 20000,
@@ -802,4 +802,7 @@ const levels = [
 }
 ];
 
-module.exports = { levels };
+export const levels = levelsData;
+//const levelsModule = levelsData;
+
+//module.exports = { levelsModule };
