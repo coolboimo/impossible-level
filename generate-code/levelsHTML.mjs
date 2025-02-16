@@ -70,7 +70,7 @@ function generateHtmlTemplate(level, index) {
                         </div>
                     </div>
                 </main>
-                <script type="module" src="../../scripts/headerFunctions.js"></script>
+                <script type="module" src="../scripts/headerFunctions.js"></script>
             </body>
             </html>`;
 }
