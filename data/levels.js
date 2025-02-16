@@ -1,4 +1,4 @@
-export const levels = [
+const levels = [
 {
     name: "Formosa",
     fps: 20000,
@@ -801,3 +801,5 @@ export const levels = [
     worldRecord: `<a href="https://youtu.be/6cCSLm9S4Ck">(1.9%): d1kkgd</a>`
 }
 ];
+
+module.exports = { levels };

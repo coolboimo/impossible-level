@@ -10,7 +10,9 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 
 // Import levels from your levels.js file
-import { levels } from '../data/levels.js';
+import pkg from '../data/levels.js';
+const { levels } = pkg;
+
 
 function generateHtmlTemplate(level, index) {
     return `<!DOCTYPE html>
@@ -75,7 +77,7 @@ function generateHtmlTemplate(level, index) {
 
 function createLevelPages() {
     try {
-        const outputDir = join(__dirname, '../html/levels');
+        const outputDir = join(__dirname, '../levels');
         
         // Create output directory if it doesn't exist
         if (!fs.existsSync(outputDir)) {
