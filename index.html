@@ -36,5 +36,26 @@
     </main>
     <script type="module" src="scripts/main.js"></script>
     <script type="module" src="scripts/headerFunctions.js"></script>
+    <script>
+      // Wait until the page is fully loaded
+      window.addEventListener('load', function() {
+        // Delay execution to give the ad time to load (adjust time as needed)
+        setTimeout(function() {
+          // Select the ad container by its class name
+          var adElement = document.querySelector('.adsbygoogle');
+    
+          if (adElement) {
+            // Get the computed height of the ad element
+            var computedHeight = window.getComputedStyle(adElement).height;
+            
+            // If the height is 0 (or if its innerHTML is empty), set the height to 0 explicitly
+            if (computedHeight === "0px" || adElement.innerHTML.trim() === "") {
+              adElement.style.height = "0px";
+            }
+          }
+        }, 3000); // 3-second delay; adjust if necessary
+      });
+</script>
+
 </body>
 </html>
