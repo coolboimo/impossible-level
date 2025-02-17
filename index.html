@@ -1,61 +1,84 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Impossible Levels List</title>
-    <link rel="stylesheet" type="text/css" href="CSS/main.css">
-    <link rel="stylesheet" type="text/css" href="CSS/header.css">
-    <link rel="stylesheet" type="text/css" href="CSS/general.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Gamja+Flower&family=IBM+Plex+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4499224282005761"
-     crossorigin="anonymous"></script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Impossible Levels List</title>
+  <link rel="stylesheet" type="text/css" href="CSS/main.css" />
+  <link rel="stylesheet" type="text/css" href="CSS/header.css" />
+  <link rel="stylesheet" type="text/css" href="CSS/general.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Gamja+Flower&family=IBM+Plex+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4499224282005761" crossorigin="anonymous"></script>
+  <style>
+    /* Ensure the ad container does not add extra space */
+    #ad-container {
+      margin: 0;
+      padding: 0;
+      border: none;
+    }
+  </style>
 </head>
 <body>
-    <header class="js-header-content"></header>
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4499224282005761"
-         crossorigin="anonymous"></script>
+  <header class="js-header-content"></header>
+  
+  <!-- Ad container -->
+  <div id="ad-container">
     <ins class="adsbygoogle"
          style="display:block"
          data-ad-format="fluid"
          data-ad-layout-key="-h1-3+35-b4+a8"
          data-ad-client="ca-pub-4499224282005761"
-         data-ad-slot="4696847387"></ins>
+         data-ad-slot="4696847387">
+    </ins>
     <script>
-         (adsbygoogle = window.adsbygoogle || []).push({});
+      (adsbygoogle = window.adsbygoogle || []).push({});
     </script>
-    <main>
-        <div class="search-container">
-            <input class="search-box" id="searchBox" placeholder="Search">
-            <button class="search-button" id="searchButton"><span class="material-symbols-outlined">search</span></button>
-        </div>
-        <div class="main-content js-main-content"></div>
-    </main>
-    <script type="module" src="scripts/main.js"></script>
-    <script type="module" src="scripts/headerFunctions.js"></script>
-    <script>
-      // Wait until the page is fully loaded
-      window.addEventListener('load', function() {
-        // Delay execution to give the ad time to load (adjust time as needed)
-        setTimeout(function() {
-          // Select the ad container by its class name
-          var adElement = document.querySelector('.adsbygoogle');
-    
-          if (adElement) {
-            // Get the computed height of the ad element
-            var computedHeight = window.getComputedStyle(adElement).height;
-            
-            // If the height is 0 (or if its innerHTML is empty), set the height to 0 explicitly
-            if (computedHeight === "0px" || adElement.innerHTML.trim() === "") {
-              adElement.style.height = "0px";
-            }
+  </div>
+  
+  <main>
+    <div class="search-container">
+      <input class="search-box" id="searchBox" placeholder="Search" />
+      <button class="search-button" id="searchButton">
+        <span class="material-symbols-outlined">search</span>
+      </button>
+    </div>
+    <div class="main-content js-main-content"></div>
+  </main>
+  
+  <script type="module" src="scripts/main.js"></script>
+  <script type="module" src="scripts/headerFunctions.js"></script>
+  
+  <!-- JavaScript to remove the ad container if no ad is served -->
+  <script>
+    window.addEventListener('load', function() {
+      // Delay execution to allow AdSense to attempt loading the ad
+      setTimeout(function() {
+        var adContainer = document.getElementById("ad-container");
+        if (!adContainer) return;
+        
+        var adElement = adContainer.querySelector('.adsbygoogle');
+        if (adElement) {
+          // Option 1: Check if Google sets data-ad-status to "unfilled"
+          var adStatus = adElement.getAttribute('data-ad-status');
+          if (adStatus === 'unfilled') {
+            adContainer.remove();
+            return;
           }
-        }, 3000); // 3-second delay; adjust if necessary
-      });
-</script>
-
+          // Option 2: Check if the ad element is effectively empty or has no height
+          if (adElement.offsetHeight === 0 || adElement.innerHTML.trim() === "") {
+            adContainer.remove();
+            return;
+          }
+        } else {
+          // If no ad element is found, remove the container
+          adContainer.remove();
+        }
+      }, 3000); // Adjust this delay if necessary
+    });
+  </script>
 </body>
 </html>
+
